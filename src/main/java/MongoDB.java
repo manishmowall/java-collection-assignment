@@ -15,38 +15,25 @@ public class MongoDB implements UserDB {
     private String database;
     private String collection;
     private List<User> users;
-    public MongoDB(String url, int port, String database, String collection) {
+
+    public MongoDB(String url, int port, String database, String collection) throws Exception {
         this.url = url;
         this.port = port;
         this.database = database;
         this.collection = collection;
         users = new ArrayList<User>();
+        getConnection();
     }
 
-    private void getConnection() throws Exception{
-        mongoClient = new MongoClient(url,port);
+    private void getConnection() throws Exception {
+        mongoClient = new MongoClient(url, port);
         DB db = mongoClient.getDB(database);
         System.out.println("Connect to database successfully");
         dbCollection = db.getCollection(collection);
     }
 
-    public List<User> selectAll() {
+    public List<User> selectAllUsers() throws Exception {
 
-        try {
-            getConnection();
-            findCollection();
-
-        }
-        catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }finally {
-            closeConnection();
-            return users;
-        }
-
-    }
-
-    private void findCollection() {
         DBCursor cursor = dbCollection.find();
         BasicDBObject obj;
         User user;
@@ -60,6 +47,10 @@ public class MongoDB implements UserDB {
             users.add(user);
 
         }
+
+        closeConnection();
+        return users;
+
     }
 
     private void closeConnection() {
