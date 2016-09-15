@@ -3,5 +3,6 @@
  */
 public interface GeneralList {
     void displayList();
+    void sort();
 }
 

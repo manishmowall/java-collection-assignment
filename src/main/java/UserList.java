@@ -1,3 +1,5 @@
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,6 +11,7 @@ public class UserList implements GeneralList{
     public UserList(List<User> users) {
 
         this.users =  users;
+
     }
 
     public void displayList() {
@@ -21,6 +24,11 @@ public class UserList implements GeneralList{
                 System.out.println(user.getName() + " " + user.getDOB() + " " + user.getEmail());
             }
         }
+    }
+
+    public void sort() {
+        //using comparable interface to sort user defined class list
+        Collections.sort(this.users);
     }
 
 

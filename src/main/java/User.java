@@ -1,7 +1,9 @@
+import java.util.Comparator;
+
 /**
  * Created by mowall on 14/9/16.
  */
-public class User {
+public class User implements Comparable<User> {
     private String name;
     private String DOB;
     private String email;
@@ -11,7 +13,6 @@ public class User {
         this.name = name;
         this.DOB = DOB;
         this.email = email;
-
     }
 
     public String getName() {
@@ -26,4 +27,9 @@ public class User {
         return email;
     }
 
+    //used for sorting list of users
+    public int compareTo(User user2) {
+        return name.compareTo(user2.getName());
+
+    }
 }
