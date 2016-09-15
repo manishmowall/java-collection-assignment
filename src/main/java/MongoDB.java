@@ -25,7 +25,7 @@ public class MongoDB implements UserDB {
     public void getConnection() {
         try{
             tryConnecting();
-            closeConnection();
+
         }
         catch (Exception exception){
             System.out.println(exception.getClass().getName() + ": " + exception.getMessage());
@@ -52,6 +52,7 @@ public class MongoDB implements UserDB {
                 String email = obj.getString("email");
                 user = new User(name, DOB, email);
                 users.add(user);
+
             }
 
 
@@ -59,6 +60,7 @@ public class MongoDB implements UserDB {
         catch (Exception ex) {
             System.out.println(ex.getMessage());
         }finally {
+            closeConnection();
             return users;
         }
 
