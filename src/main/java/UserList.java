@@ -8,9 +8,7 @@ public class UserList implements GeneralList{
 
     public UserList(List<User> users) {
 
-       // userDB.getConnection();
         this.users =  users;
-
     }
 
     public void displayList() {
