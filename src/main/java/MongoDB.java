@@ -1,6 +1,8 @@
-import com.mongodb.*;
-
-import java.sql.ResultSet;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.MongoClient;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +56,6 @@ public class MongoDB implements UserDB {
     }
 
     private void closeConnection() {
-            mongoClient.close();
-        }
+        mongoClient.close();
+    }
 }
