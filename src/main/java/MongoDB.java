@@ -20,9 +20,10 @@ public class MongoDB implements UserDB {
         this.port = port;
         this.database = database;
         this.collection = collection;
+        getConnection();
     }
 
-    public void getConnection() {
+    private void getConnection() {
         try{
             tryConnecting();
 

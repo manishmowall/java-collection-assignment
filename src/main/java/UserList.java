@@ -6,10 +6,10 @@ import java.util.List;
 public class UserList implements GeneralList{
     private List<User> users;
 
-    public UserList(UserDB userDB) {
+    public UserList(List<User> users) {
 
-        userDB.getConnection();
-        users =  userDB.selectAll();
+       // userDB.getConnection();
+        this.users =  users;
 
     }
 

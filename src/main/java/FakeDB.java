@@ -13,7 +13,7 @@ public class FakeDB implements UserDB {
         users.add(user);
     }
 
-    public void getConnection() {}
+    private void getConnection() {}
 
     public List<User> selectAll() {
         return users;
