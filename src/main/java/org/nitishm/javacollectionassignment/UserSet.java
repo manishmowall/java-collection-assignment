@@ -1,18 +1,18 @@
 package org.nitishm.javacollectionassignment;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.Set;
 
-public class UserList {
-    private final List<User> users;
+public class UserSet {
 
-    public UserList(List<User> users) {
+    private final Set<User> users;
+
+    public UserSet(Set<User> users) {
         this.users = users;
     }
 
-    public void displayList() {
+    public void displaySet() {
         if (users.isEmpty()) {
-            System.out.println("DB is empty");
+            System.out.println("no users found");
         } else {
             for (User user : users) {
                 System.out.println(user.getName() + " " + user.getdateOfBirth() + " " + user.getEmail());
@@ -20,12 +20,7 @@ public class UserList {
         }
     }
 
-    public void sort() {
-        //using comparable interface to sort user defined class list
-        Collections.sort(this.users);
-    }
-
-    public List<User> getUserList() {
+    public Set<User> getUserSet() {
         return users;
     }
 

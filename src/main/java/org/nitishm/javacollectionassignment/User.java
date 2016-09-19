@@ -28,7 +28,7 @@ public class User implements Comparable<User> {
 
     //used for sorting list of users
     public int compareTo(User user2) {
-        return name.compareTo(user2.getName());
+        return getName().compareTo(user2.getName());
 
     }
 

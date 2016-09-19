@@ -1,7 +1,9 @@
 package org.nitishm.javacollectionassignment;
 
 import java.util.List;
+import java.util.Set;
 
 public interface UserDB {
-    List<User> selectAllUsers() throws Exception;
+    List<User> getListOfUsers() throws Exception;
+    Set<User> getSetOfUsers() throws  Exception;
 }
