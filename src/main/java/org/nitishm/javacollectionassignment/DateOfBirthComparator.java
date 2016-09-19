@@ -1,8 +1,7 @@
+package org.nitishm.javacollectionassignment;
+
 import java.util.Comparator;
 
-/**
- * Created by webonise on 15/9/16.
- */
 public class DateOfBirthComparator implements Comparator {
     public int compare(Object o1, Object o2){
         User user1 = (User) o1;

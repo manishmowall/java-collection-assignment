@@ -1,10 +1,9 @@
+package org.nitishm.javacollectionassignment;
+
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by mowall on 15/9/16.
- */
-public class AbstractingDBApplication {
+public class Application {
     public static void main(String[] args) {
         UserList userList;
 
@@ -20,18 +19,19 @@ public class AbstractingDBApplication {
             userList.displayList();
 
             System.out.println("==============Equals Demo===============");
-
             List<User> users = userList.getUserList();
             User user1 = users.get(0);
-            User user2 = users.get(1);
+            User user2 = users.get(2);
 
-            System.out.println(user1.equals(user2));
+            System.out.println("is " +user1.getName() +" equals to " + user2.getName() +"?");
+            if(user1.equals(user2))
+                System.out.println("Yes");
+            else
+                System.out.println("No");
 
             System.out.println("================Comparator Demo==================");
-
             Collections.sort(users, new DateOfBirthComparator());
             userList.displayList();
-
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

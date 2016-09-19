@@ -1,9 +1,10 @@
+package org.nitishm.javacollectionassignment;
+
+import org.nitishm.javacollectionassignment.GeneralList;
+
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by mowall on 14/9/16.
- */
 public class UserList implements GeneralList {
     private final List<User> users;
 
@@ -12,18 +13,16 @@ public class UserList implements GeneralList {
     }
 
     public void displayList() {
-
         if (users.isEmpty()) {
             System.out.println("DB is empty");
         } else {
             for (User user : users) {
-                System.out.println(user.getName() + " " + user.getDOB() + " " + user.getEmail());
+                System.out.println(user.getName() + " " + user.getdateOfBirth() + " " + user.getEmail());
             }
         }
     }
 
     public void sort() {
-
         //using comparable interface to sort user defined class list
         Collections.sort(this.users);
     }
@@ -31,5 +30,4 @@ public class UserList implements GeneralList {
     public List<User> getUserList() {
         return users;
     }
-
 }

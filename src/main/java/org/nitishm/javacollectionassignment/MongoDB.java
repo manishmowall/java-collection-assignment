@@ -1,3 +1,5 @@
+package org.nitishm.javacollectionassignment;
+
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -6,9 +8,6 @@ import com.mongodb.MongoClient;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by mowall on 14/9/16.
- */
 public class MongoDB implements UserDB {
     private MongoClient mongoClient;
     private DBCollection dbCollection;
@@ -35,7 +34,6 @@ public class MongoDB implements UserDB {
     }
 
     public List<User> selectAllUsers() throws Exception {
-
         DBCursor cursor = dbCollection.find();
         BasicDBObject obj;
         User user;
@@ -47,12 +45,10 @@ public class MongoDB implements UserDB {
             String email = obj.getString("email");
             user = new User(name, DOB, email);
             users.add(user);
-
         }
 
         closeConnection();
         return users;
-
     }
 
     private void closeConnection() {

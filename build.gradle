@@ -11,5 +11,5 @@ repositories {
 
 dependencies {
     compile 'org.mongodb:mongo-java-driver:2.12.3'
-
+    compile 'org.apache.commons:commons-lang3:3.4'
 }
