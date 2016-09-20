@@ -1,4 +1,4 @@
-package org.nitishm.javacollectionassignment;
+package org.webonise.javacollectionassignment;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -26,7 +26,6 @@ public class User implements Comparable<User> {
         return email;
     }
 
-    //used for sorting list of users
     public int compareTo(User user2) {
         return getName().compareTo(user2.getName());
 
@@ -34,16 +33,15 @@ public class User implements Comparable<User> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
 
         User user = (User) o;
 
         EqualsBuilder equalsBuilder = new EqualsBuilder();
         equalsBuilder.append(getName(),user.getName());
-        if (!getName().equals(user.getName())) return false;
-        if (!getdateOfBirth().equals(user.getdateOfBirth())) return false;
-        return getEmail().equals(user.getEmail());
+        equalsBuilder.append(getdateOfBirth(),user.getdateOfBirth());
+        equalsBuilder.append(getEmail(),user.getEmail());
+
+        return equalsBuilder.isEquals();
 
     }
 
@@ -53,6 +51,7 @@ public class User implements Comparable<User> {
         builder.append(getName());
         builder.append(getdateOfBirth());
         builder.append(getEmail());
+
         return builder.toHashCode();
     }
 }

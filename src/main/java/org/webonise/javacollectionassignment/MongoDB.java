@@ -1,4 +1,4 @@
-package org.nitishm.javacollectionassignment;
+package org.webonise.javacollectionassignment;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -11,12 +11,13 @@ import java.util.List;
 import java.util.Set;
 
 public class MongoDB implements UserDB {
+    private final String url;
+    private final int port;
+    private final String database;
+    private final String collection;
     private MongoClient mongoClient;
     private DBCollection dbCollection;
-    private String url;
-    private int port;
-    private String database;
-    private String collection;
+
 
     public MongoDB(String url, int port, String database, String collection) throws Exception {
         this.url = url;
@@ -35,16 +36,14 @@ public class MongoDB implements UserDB {
 
     public List<User> getListOfUsers() throws Exception {
         DBCursor cursor = dbCollection.find();
-        BasicDBObject obj;
-        List<User> users = new ArrayList<User>();;
-        User user;
+        List<User> users = new ArrayList<>();
 
         while (cursor.hasNext()) {
-            obj = (BasicDBObject) cursor.next();
+            BasicDBObject obj = (BasicDBObject) cursor.next();
             String name = obj.getString("name");
             String DOB = obj.getString("DOB");
             String email = obj.getString("email");
-            user = new User(name, DOB, email);
+            User user = new User(name, DOB, email);
             users.add(user);
         }
 
@@ -54,16 +53,14 @@ public class MongoDB implements UserDB {
 
     public Set<User> getSetOfUsers() throws Exception {
         DBCursor cursor = dbCollection.find();
-        BasicDBObject obj;
-        Set<User> users = new HashSet<User>();;
-        User user;
+        Set<User> users = new HashSet<>();
 
-        while (cursor.hasNext()) {
-            obj = (BasicDBObject) cursor.next();
+            while (cursor.hasNext()) {
+            BasicDBObject obj = (BasicDBObject) cursor.next();
             String name = obj.getString("name");
             String DOB = obj.getString("DOB");
             String email = obj.getString("email");
-            user = new User(name, DOB, email);
+            User user = new User(name, DOB, email);
             users.add(user);
         }
 

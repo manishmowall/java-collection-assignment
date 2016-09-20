@@ -1,4 +1,4 @@
-package org.nitishm.javacollectionassignment;
+package org.webonise.javacollectionassignment;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -11,7 +11,7 @@ public class UserMap {
 
     public UserMap(Set<User> userSet) {
         this.userSet = userSet;
-        users = new HashMap<Integer, User>();
+        users = new HashMap<>();
         mappingToHashMap();
     }
 
@@ -64,6 +64,6 @@ public class UserMap {
     }
 
     public void replace(Integer key, User value) {
-        users.replace(key, value);
+        users.remove(key, value);
     }
 }

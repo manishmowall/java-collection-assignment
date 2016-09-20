@@ -1,4 +1,4 @@
-package org.nitishm.javacollectionassignment;
+package org.webonise.javacollectionassignment;
 
 import java.util.List;
 import java.util.Set;
