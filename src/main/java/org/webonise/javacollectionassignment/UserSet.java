@@ -4,31 +4,36 @@ import java.util.Set;
 
 public class UserSet {
 
-    private final Set<User> users;
+   private final Set<User> users;
 
-    public UserSet(Set<User> users) {
-        this.users = users;
-    }
+   public UserSet(Set<User> users) {
 
-    public void displaySet() {
-        if (users.isEmpty()) {
-            System.out.println("no users found");
-        } else {
-            for (User user : users) {
-                System.out.println(user.getName() + " " + user.getdateOfBirth() + " " + user.getEmail());
-            }
-        }
-    }
+      this.users = users;
+   }
 
-    public Set<User> getUserSet() {
-        return users;
-    }
+   public void displaySet() {
 
-    public void add(User user) {
-        users.add(user);
-    }
+      if (users.isEmpty()) {
+         System.out.println("no users found");
+      } else {
+         for (User user : users) {
+            System.out.println(user.getName() + " " + user.getdateOfBirth() + " " + user.getEmail());
+         }
+      }
+   }
 
-    public void clear() {
-        users.clear();
-    }
+   public Set<User> getUserSet() {
+
+      return users;
+   }
+
+   public void add(User user) {
+
+      users.add(user);
+   }
+
+   public void clear() {
+
+      users.clear();
+   }
 }
